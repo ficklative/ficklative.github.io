@@ -101,72 +101,7 @@
     
   </style>
 </head>
-<script>
-  // Add fade-out keyframe and class
-  const style = document.createElement('style');
-  style.innerHTML = `
-    @keyframes fadeOut {
-      from { opacity: 1; }
-      to { opacity: 0; }
-    }
-    .fade-out {
-      animation: fadeOut 0.5s ease-out forwards;
-    }
-  `;
-  document.head.appendChild(style);
 
-  const buttons = document.getElementById('buttons');
-  const subText = document.getElementById('sub-text');
-
-  // HOME — Reset the page
-  document.getElementById('link-home').addEventListener('click', () => {
-    location.reload();
-  });
-
-  // ABOUT — Fade out buttons, change subtext
-  document.getElementById('link-about').addEventListener('click', () => {
-    // Fade out buttons
-    if (buttons) {
-      buttons.classList.remove('fade-in');
-      buttons.classList.add('fade-out');
-      setTimeout(() => { buttons.style.display = 'none'; }, 500);
-    }
-
-    // Fade out then replace subtext
-    if (subText) {
-      subText.classList.remove('fade-in');
-      subText.classList.add('fade-out');
-      setTimeout(() => {
-        subText.innerHTML = `
-          Welcome to the website!<br>
-          Rosalynn Alejandro is a web and UI/UX designer<br>
-          who has helped business unify their voice,<br>
-          with their brand, into visuals that speak<br>
-          louder than words
-        `;
-        subText.classList.remove('fade-out');
-        subText.classList.add('fade-in');
-      }, 500);
-    }
-  });
-
-  // CONTACT — Replace subtext with email
-  document.getElementById('link-contact').addEventListener('click', () => {
-    if (subText) {
-      subText.classList.remove('fade-in');
-      subText.classList.add('fade-out');
-      setTimeout(() => {
-        subText.innerHTML = `
-          <a href="mailto:ficklative@gmail.com" style="color: #FD9B98; text-decoration: none;">
-            ficklative@gmail.com
-          </a>
-        `;
-        subText.classList.remove('fade-out');
-        subText.classList.add('fade-in');
-      }, 500);
-    }
-  });
-</script>
 <body>
   <div class="position-relative w-100 vh-100 overflow-hidden">
     <div id="gradient-background" class="position-absolute w-100" style="height: 481px; background: linear-gradient(315deg, #FFE7C1 0%, #FFB6B6 100%)"></div>
@@ -247,5 +182,72 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  // Add fade-out keyframe and class
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+    .fade-out {
+      animation: fadeOut 0.5s ease-out forwards;
+    }
+  `;
+  document.head.appendChild(style);
+
+  const buttons = document.getElementById('buttons');
+  const subText = document.getElementById('sub-text');
+
+  // HOME — Reset the page
+  document.getElementById('link-home').addEventListener('click', () => {
+    location.reload();
+  });
+
+  // ABOUT — Fade out buttons, change subtext
+  document.getElementById('link-about').addEventListener('click', () => {
+    // Fade out buttons
+    if (buttons) {
+      buttons.classList.remove('fade-in');
+      buttons.classList.add('fade-out');
+      setTimeout(() => { buttons.style.display = 'none'; }, 500);
+    }
+
+    // Fade out then replace subtext
+    if (subText) {
+      subText.classList.remove('fade-in');
+      subText.classList.add('fade-out');
+      setTimeout(() => {
+        subText.innerHTML = `
+          Welcome to the website!<br>
+          Rosalynn Alejandro is a web and UI/UX designer<br>
+          who has helped business unify their voice,<br>
+          with their brand, into visuals that speak<br>
+          louder than words
+        `;
+        subText.classList.remove('fade-out');
+        subText.classList.add('fade-in');
+      }, 500);
+    }
+  });
+
+  // CONTACT — Replace subtext with email
+  document.getElementById('link-contact').addEventListener('click', () => {
+    if (subText) {
+      subText.classList.remove('fade-in');
+      subText.classList.add('fade-out');
+      setTimeout(() => {
+        subText.innerHTML = `
+          <a href="mailto:ficklative@gmail.com" style="color: #FD9B98; text-decoration: none;">
+            ficklative@gmail.com
+          </a>
+        `;
+        subText.classList.remove('fade-out');
+        subText.classList.add('fade-in');
+      }, 500);
+    }
+  });
+</script>
 </body>
 </html>
+
