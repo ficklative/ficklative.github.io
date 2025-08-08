@@ -66,12 +66,12 @@
       border-radius: 97px;
     }
     .hero-text {
-      font-size: 3rem;
+      font-size: 4rem;
       color: #fc9b98;
       letter-spacing: 0.3rem;
     }
     .sub-text {
-      font-size: 1.5rem;
+      font-size: 2rem;
       letter-spacing: 0.1rem;
     }
     .btn-custom {
@@ -90,6 +90,7 @@
       color: white;
     }
     .nav-links div {
+      font-size: 1.5rem;
       cursor: pointer;
       transition: color 0.3s ease;
     }
@@ -100,13 +101,79 @@
     
   </style>
 </head>
+<script>
+  // Add fade-out keyframe and class
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+    .fade-out {
+      animation: fadeOut 0.5s ease-out forwards;
+    }
+  `;
+  document.head.appendChild(style);
+
+  const buttons = document.getElementById('buttons');
+  const subText = document.getElementById('sub-text');
+
+  // HOME — Reset the page
+  document.getElementById('link-home').addEventListener('click', () => {
+    location.reload();
+  });
+
+  // ABOUT — Fade out buttons, change subtext
+  document.getElementById('link-about').addEventListener('click', () => {
+    // Fade out buttons
+    if (buttons) {
+      buttons.classList.remove('fade-in');
+      buttons.classList.add('fade-out');
+      setTimeout(() => { buttons.style.display = 'none'; }, 500);
+    }
+
+    // Fade out then replace subtext
+    if (subText) {
+      subText.classList.remove('fade-in');
+      subText.classList.add('fade-out');
+      setTimeout(() => {
+        subText.innerHTML = `
+          Welcome to the website!<br>
+          Rosalynn Alejandro is a web and UI/UX designer<br>
+          who has helped business unify their voice,<br>
+          with their brand, into visuals that speak<br>
+          louder than words
+        `;
+        subText.classList.remove('fade-out');
+        subText.classList.add('fade-in');
+      }, 500);
+    }
+  });
+
+  // CONTACT — Replace subtext with email
+  document.getElementById('link-contact').addEventListener('click', () => {
+    if (subText) {
+      subText.classList.remove('fade-in');
+      subText.classList.add('fade-out');
+      setTimeout(() => {
+        subText.innerHTML = `
+          <a href="mailto:ficklative@gmail.com" style="color: #FD9B98; text-decoration: none;">
+            ficklative@gmail.com
+          </a>
+        `;
+        subText.classList.remove('fade-out');
+        subText.classList.add('fade-in');
+      }, 500);
+    }
+  });
+</script>
 <body>
   <div class="position-relative w-100 vh-100 overflow-hidden">
     <div id="gradient-background" class="position-absolute w-100" style="height: 481px; background: linear-gradient(315deg, #FFE7C1 0%, #FFB6B6 100%)"></div>
 
     <h1 id="site-title"
-      class="position-absolute start-50 top-0 translate-middle-x modak"
-      style="font-size: 2.5rem; transform: translateX(-50%) translateY(16px);">
+      class="position-absolute start-50 translate-middle-x modak"
+      style="top: 20px; font-size: 2.5rem;">
       ficklative
     </h1>
 
@@ -154,7 +221,7 @@
       <div id="circle-md-bottom-right" class="circle-md" style="top: 358px; left: 1128px;"></div>
 
       <!-- Hero Text -->
-      <div id="hero-text" class="fade-pulse position-absolute text-center w-100 hero-text" style="top: 108px;">
+      <div id="hero-text" class="fade-pulse position-absolute text-center w-100 hero-text" style="top: 96px;">
         Web Designer | UI/UX
       </div>
 
