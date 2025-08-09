@@ -127,6 +127,27 @@
       border-radius: 8px;
       display:block;
     }
+    /* Change scrollbar track background */
+    .simplebar-track.simplebar-vertical {
+      width: 10px; /* adjust thickness */
+      border-radius: 5px;
+    }
+
+    /* Change scrollbar thumb (the draggable part) */
+    .simplebar-scrollbar:before {
+      background: #fd9b98; /* pink thumb */
+      border-radius: 5px;
+    }
+
+    /* Optional: hover effect */
+    .simplebar-scrollbar:hover:before {
+      background: #fc7f7b; /* darker pink on hover */
+    }
+    /* Only move scrollbar for highlights view */
+    .highlights-scroll .simplebar-track.simplebar-vertical {
+      top: 12px;
+      bottom: 8px;
+    }
   </style>
 </head>
 
@@ -280,30 +301,39 @@
     }
   });
 
-  // HIGHLIGHTS — inject a vertical Simplebar scroll in #glass-box with the three images
-  const highlightsBtn = document.getElementById('link-highlights');
-  if (highlightsBtn) {
-    highlightsBtn.addEventListener('click', () => {
-      const glassBox = document.getElementById('glass-box');
-      if (!glassBox) return;
+  // HIGHLIGHTS — show scrollable images in #glass-box and hide other content
+  document.getElementById('link-highlights').addEventListener('click', () => {
+  const glassBox = document.getElementById('glass-box');
+  if (!glassBox) return;
 
-      // Replace glass-box content with a Simplebar scroll container containing the three images
-      glassBox.innerHTML = `
-        <div data-simplebar style="max-height: 100%; height:100%; overflow-y: auto; padding: 1rem; display:flex; flex-direction:column; gap:1rem; align-items:center; box-sizing: border-box;">
-          <img class="highlights-image" src="https://ficklative.github.io/images/umers_highlight_1" alt="highlight 1">
-          <img class="highlights-image" src="https://ficklative.github.io/images/umers_highlight_2" alt="highlight 2">
-          <img class="highlights-image" src="https://ficklative.github.io/images/umers_highlight_3" alt="highlight 3">
-        </div>
-      `;
+  // Hide other content inside the frame
+  const heroText = document.getElementById('hero-text');
+  const subText = document.getElementById('sub-text');
+  const buttons = document.getElementById('buttons');
+  const btnportfolio = document.getElementById('btn-portfolio');
+  const btnresume = document.getElementById('btn-resume')
+  if (heroText) heroText.style.display = 'none';
+  if (subText) subText.style.display = 'none';
+  if (buttons) buttons.style.display = 'none';
+  if (btnportfolio) btnportfolio.style.display = 'none';
+  if (btnresume) btnresume.style.display ='none';
 
-      // If SimpleBar didn't auto-initialize for dynamically injected content, initialize it explicitly
-      const sbContainer = glassBox.querySelector('[data-simplebar]');
-      if (sbContainer && window.SimpleBar) {
-        // initialize SimpleBar instance (autoHide=false for consistent visibility)
-        new SimpleBar(sbContainer, { autoHide: false });
-      }
-    });
+  // Inject scrollable highlights
+  glassBox.innerHTML = `
+    <div class="highlights-scroll" data-simplebar style="max-height:90%; height:90%; overflow-y:auto; padding:1rem; display:flex; flex-direction:column; gap:1rem; align-items:center; box-sizing:border-box;">
+      <img src="https://ficklative.github.io/images/umers_highlight_1.png" alt="Highlight 1" style="width:90%; max-width:700px; border-radius:8px;">
+      <img src="https://ficklative.github.io/images/umers_highlight_2.png" alt="Highlight 2" style="width:90%; max-width:700px; border-radius:8px;">
+      <img src="https://ficklative.github.io/images/umers_highlight_3.png" alt="Highlight 3" style="width:90%; max-width:700px; border-radius:8px;">
+    </div>
+    `;
+
+
+  // Initialize SimpleBar if available
+  if (window.SimpleBar) {
+    new SimpleBar(glassBox.querySelector('[data-simplebar]'), { autoHide: false });
   }
+});
+
 </script>
 </body>
 </html>
