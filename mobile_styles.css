@@ -47,7 +47,7 @@ body {
 }
 
 .page-wrapper {
-  min-height: 100vh; /* full viewport height */
+  min-height: 100vh; 
   position: relative;
   opacity: 0;
   background: transparent !important;
