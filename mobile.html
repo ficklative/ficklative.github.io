@@ -35,7 +35,7 @@
           </li>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">Highlights</a>
+            <a class="nav-link" href="#highlights">Highlights</a>
           </li>
         </ul>
       </div>
@@ -43,6 +43,7 @@
   </nav>
   <div class="bg-gradient-custom position-absolute top-0 start-0 w-100" style="height: 302px; z-index: 0;"></div>
   <div class="bg-gradient-custom position-absolute start-0 w-100" style="top: 438px; height: 50px; z-index: 0;"></div>
+  <div class="bg-gradient-custom position-absolute start-0 w-100" style="top: 616px; height: 50px; z-index: 0;"></div>
   <div class="container position-relative p-0" style="max-width: 360px; background: white; top: 24px;">
     <!-- Gradient background -->
 
@@ -56,8 +57,13 @@
             border-radius: 9px; z-index: 2;"></div>
 
     <!-- Profile image -->
-    <img src="https://ficklative.github.io/images/ficklative.png" class="position-absolute"
-      style="width: 89px; height: 92px; left: 141px; top: 71px; z-index: 3;" alt="Profile">
+    <h1 id="site-title"
+      class="position-absolute"
+      style="width: 89px; height: 92px; left: 141px; top: 71px; z-index: 3;">
+      <img src="https://ficklative.github.io/images/ficklative.png"
+         alt="Ficklative Logo"
+         style="width: 100%; height: auto; display: block; margin: 0 auto;">
+    </h1>
 
     <!-- Text -->
     <div class="position-absolute text-center text-pink fw-normal"
@@ -108,14 +114,16 @@
     </div>
 
     <!-- HELLO text -->
-    <div class="position-absolute text-center text-pink fw-normal"
-      style="width: 289px; left: 36px; top: 220px; font-size: 30px; letter-spacing: 3.8px;">
-      HELLO
-    </div>
+    <h2>
+      <div class="position-absolute text-center text-pink fw-normal"
+        style="width: 289px; left: 36px; top: 220px; font-size: 30px; letter-spacing: 3.8px;">
+        HELLO
+      </div>
+    </h2>
 
     <!-- Description -->
-    <div class="position-absolute text-center text-dark"
-      style="width: 299px; left: 32px; top: 300px; font-size: 12px; letter-spacing: 1.5px;">
+    <div id="about" class="position-absolute text-center text-dark"
+      style="width: 299px; left: 32px; top: 296px; font-size: 12px; letter-spacing: 1.5px;">
       <strong>Welcome to the website!</strong><br>
       Rosalynn Alejandro is a Web Designer<br>
       who has helped businesses unify their voice,<br>
@@ -124,21 +132,49 @@
     </div>
 
     <!-- CTA Buttons -->
-  <div class="bg-gradient-custom w-100">
-    <div id="buttons" class="position-absolute d-flex justify-content-center gap-4"
-      style="top: 424px; left: 50%; transform: translateX(-50%);">
-      <a id="btn-portfolio" class="btn btn-custom" href="https://www.behance.net/ficklative?locale=en_US"
-        target="_blank">portfolio</a>
-      <a id="btn-resume" class="btn btn-custom" href="https://ficklative.github.io/images/Rosalynn_UIUX_Resume_web.pdf"
-        target="_blank" download>resume</a>
+    <div class="bg-gradient-custom w-100">
+      <div id="buttons" class="position-absolute d-flex justify-content-center gap-4"
+        style="top: 416px; left: 50%; transform: translateX(-50%);">
+        <a id="btn-portfolio" class="btn btn-custom" href="https://www.behance.net/ficklative?locale=en_US"
+          target="_blank">portfolio</a>
+        <a id="btn-resume" class="btn btn-custom" href="https://ficklative.github.io/images/Rosalynn_UIUX_Resume_web.pdf"
+          target="_blank" download>resume</a>
+      </div>
     </div>
-  </div>
+
+    <h2>
+      <div id="contact" class="position-absolute text-center text-pink fw-normal"
+        style="width: 289px; left: 36px; top: 472px; font-size: 30px; letter-spacing: 3.8px;">
+        CONTACT
+      </div>
+    </h2>
+
+    <a class="translate-middle-x start-50 position-absolute text-center" href="mailto:ficklative@gmail.com" style="text-decoration: none; top: 512px;">
+        ficklative@gmail.com
+    </a><br>
+    <a class="translate-middle-x start-50 position-absolute text-center" href="https://www.linkedin.com/in/rosalynn-alejandro-09609b286" style="text-decoration: none; top: 532px" target="_blank">
+        Linkedin Profile
+    </a>
+    
+    <h2>
+      
+      <div id="highlights" class="position-absolute text-center text-pink fw-normal"
+        style="width: 289px; left: 36px; top: 592px; font-size: 30px; letter-spacing: 3.8px;">
+        HIGHLIGHTS
+      </div>
+    </h2>
+
+    <img src="https://ficklative.github.io/images/umers_highlight_1.png" class="position-absolute translate-middle-x start-50"
+      style="width: 80%; height: auto; left: 141px; top: 650px; z-index: 3;" alt="Profile">
+    <img src="https://ficklative.github.io/images/umers_highlight_4.png" class="position-absolute translate-middle-x start-50"
+      style="width: 80%; height: auto; left: 141px; top: 800px; z-index: 3;" alt="Profile">
     
 
   </div>
 
   <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="web_scripts.js"></script>
 </body>
 
 </html>
