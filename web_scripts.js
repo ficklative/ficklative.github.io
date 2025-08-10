@@ -23,78 +23,78 @@ let highlightsVisible = false;
 
 // Helper to restore original view when toggling off highlights
 function restoreOriginalView() {
-glassBox.innerHTML = originalGlassBoxContent;
-if (heroText) heroText.style.display = 'block';
-if (subText) subText.style.display = 'block';
-// Show portfolio and resume buttons again
-if (btnportfolio) btnportfolio.style.display = 'inline-block';
-if (btnresume) btnresume.style.display = 'inline-block';
-highlightsVisible = false;
+  glassBox.innerHTML = originalGlassBoxContent;
+  if (heroText) heroText.style.display = 'block';
+  if (subText) subText.style.display = 'block';
+  // Show portfolio and resume buttons again
+  if (btnportfolio) btnportfolio.style.display = 'inline-block';
+  if (btnresume) btnresume.style.display = 'inline-block';
+  highlightsVisible = false;
 }
 
 // HOME — Reset the page
 document.getElementById('link-home').addEventListener('click', () => {
-location.reload();
+  location.reload();
 });
 
 // ABOUT — Fade out buttons, change subtext
 document.getElementById('link-about').addEventListener('click', () => {
-if (highlightsVisible) {
+  if (highlightsVisible) {
     restoreOriginalView();
-}
+  }
 
-// Fade out buttons
-if (buttons) {
+  // Fade out buttons
+  if (buttons) {
     buttons.classList.remove('fade-in');
     buttons.classList.add('fade-out');
     setTimeout(() => { buttons.style.display = 'none'; }, 500);
-}
+  }
 
-// Fade out then replace subtext
-if (subText) {
+  // Fade out then replace subtext
+  if (subText) {
     subText.classList.remove('fade-in');
     subText.classList.add('fade-out');
     setTimeout(() => {
-    subText.innerHTML = `
+      subText.innerHTML = `
         <strong>Welcome to the website!</strong><br>
         Rosalynn Alejandro is a web and UI/UX designer<br>
         who has helped business unify their voice,<br>
         with their brand, into visuals that speak<br>
         louder than words
-    `;
-    subText.classList.remove('fade-out');
-    subText.classList.add('fade-in');
+      `;
+      subText.classList.remove('fade-out');
+      subText.classList.add('fade-in');
     }, 500);
-}
+  }
 });
 
 // CONTACT — Replace subtext with email and linkedin
 document.getElementById('link-contact').addEventListener('click', () => {
-if (highlightsVisible) {
+  if (highlightsVisible) {
     restoreOriginalView();
-}
+  }
 
-if (subText) {
+  if (subText) {
     subText.classList.remove('fade-in');
     subText.classList.add('fade-out');
     setTimeout(() => {
-    subText.innerHTML = `
+      subText.innerHTML = `
         <a href="mailto:ficklative@gmail.com" style="text-decoration: none;">
         ficklative@gmail.com
         </a><br>
         <a href="https://www.linkedin.com/in/rosalynn-alejandro-09609b286" style="text-decoration: none;" target="_blank">
         Linkedin Profile
         </a>
-    `;
-    subText.classList.remove('fade-out');
-    subText.classList.add('fade-in');
+      `;
+      subText.classList.remove('fade-out');
+      subText.classList.add('fade-in');
     }, 500);
-}
+  }
 });
 
 // HIGHLIGHTS — toggle scrollable images in #glass-box and hide/show other content
 document.getElementById('link-highlights').addEventListener('click', () => {
-if (!highlightsVisible) {
+  if (!highlightsVisible) {
     if (heroText) heroText.style.display = 'none';
     if (subText) subText.style.display = 'none';
     // Hide only portfolio and resume buttons, keep buttons container visible
@@ -110,16 +110,31 @@ if (!highlightsVisible) {
     `;
 
     if (window.SimpleBar) {
-    new SimpleBar(glassBox.querySelector('[data-simplebar]'), { autoHide: false });
+      new SimpleBar(glassBox.querySelector('[data-simplebar]'), { autoHide: false });
     }
 
     highlightsVisible = true;
-} else {
+  } else {
     restoreOriginalView();
-}
+  }
 });
+
+// Redirect to mobile.html if window width is <= 768px
 document.addEventListener("DOMContentLoaded", function () {
   if (window.innerWidth <= 768) { // Bootstrap's md breakpoint
     window.location.href = "/mobile.html"; 
   }
+});
+
+// NEW CODE: Collapse hamburger menu on nav link click
+document.addEventListener('DOMContentLoaded', () => {
+  const navbarCollapse = document.getElementById('navbarNav');
+  const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+  const navLinks = navbarCollapse.querySelectorAll('a.nav-link');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      bsCollapse.hide();
+    });
+  });
 });
