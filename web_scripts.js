@@ -103,9 +103,9 @@ if (!highlightsVisible) {
 
     glassBox.innerHTML = `
     <div class="highlights-scroll" data-simplebar style="margin-top: 8px; max-height:90%; height:90%; overflow-y:auto; padding:1rem; display:flex; flex-direction:column; gap:1rem; align-items:center; box-sizing:border-box;">
-        <img src="https://ficklative.github.io/images/umers_highlight_1.png" alt="Highlight 1" style="width:90%; max-width:700px; border-radius:8px;">
-        <img src="https://ficklative.github.io/images/umers_highlight_2.png" alt="Highlight 2" style="width:90%; max-width:700px; border-radius:8px;">
-        <img src="https://ficklative.github.io/images/umers_highlight_3.png" alt="Highlight 3" style="width:90%; max-width:700px; border-radius:8px;">
+        <img src="https://ficklative.github.io/images/umers_highlight_5.png" alt="Highlight 1" style="width:90%; max-width:700px; border-radius:8px;">
+        <img src="https://ficklative.github.io/images/umers_highlight_1.png" alt="Highlight 2" style="width:90%; max-width:700px; border-radius:8px;">
+        <img src="https://ficklative.github.io/images/umers_highlight_2.png" alt="Highlight 3" style="width:90%; max-width:700px; border-radius:8px;">
     </div>
     `;
 

@@ -1,6 +1,7 @@
 body {
     font-family: 'Baloo Thambi 2', sans-serif;
     background-color: #fff;
+    margin: 0;
 }
 
 .text-pink {
@@ -24,7 +25,7 @@ body {
     background: white;
     box-shadow: 0px 0px 4px #FFB9B7;
     position: absolute;
-    z-index: 9999
+    z-index: 9999;
 }
 
 .circle-blank {
@@ -42,6 +43,23 @@ body {
     font-weight: 700;
     color: #FD9B98;
     font-family: 'Baloo Thambi 2', sans-serif;
-    /* padding: 4px 8px; */
     transition: all 0.3s ease;
 }
+
+.page-wrapper {
+  min-height: 100vh; /* full viewport height */
+  padding-bottom: 60px; /* space for footer */
+  position: relative;
+  opacity: 0;
+}
+
+.footer {
+  background-color: white;
+  text-align: center;
+  padding: 1em 0;
+  width: 100%;
+  position: static; /* normal flow */
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.1);
+  z-index: 10000;
+}
+
