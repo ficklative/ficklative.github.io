@@ -48,9 +48,10 @@ body {
 
 .page-wrapper {
   min-height: 100vh; /* full viewport height */
-  padding-bottom: 60px; /* space for footer */
   position: relative;
   opacity: 0;
+  background: transparent !important;
+  pointer-events: none;
 }
 
 .footer {
