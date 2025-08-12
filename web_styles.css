@@ -1,75 +1,99 @@
-
 body {
   font-family: 'Baloo Thambi 2', sans-serif;
   background-color: #fff;
 }
+
 .modak {
   font-family: 'Modak', cursive;
 }
+
 .fade-in {
   animation: fadeIn 2s ease-in forwards;
   opacity: 0;
 }
+
+.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
 .fade-pulse {
   animation: fadeIn 2s ease-in forwards, pulse 3s ease-in-out infinite;
   opacity: 0;
 }
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
+
 .circle, .circle-md, .circle-lg {
   border-radius: 50%;
   background: white;
   box-shadow: 4px 4px 4px #FFB9B7;
   position: absolute;
 }
+
 .circle {
   width: 56px;
   height: 56px;
 }
+
 .circle-md {
   width: 107px;
   height: 107px;
   box-shadow: 0px 0px 4px #FFB9B7;
 }
+
 .circle-lg {
   width: 134px;
   height: 134px;
 }
+
 .circle-blank {
   width: 134px;
   height: 134px;
   border-radius: 50%;
   position: absolute;
 }
+
 .glass-box {
   background: white;
   box-shadow: 2px 2px 4px #FFB9B7 inset;
   border-radius: 23px;
 }
+
 .outer-frame {
   background: #FFE7C1;
   box-shadow: 10px 10px 4px #FFB9B7;
   border-radius: 97px;
 }
+
 .hero-text {
   font-size: 4rem;
   color: #fc9b98;
   letter-spacing: 0.3rem;
 }
+
 .sub-text {
   font-size: 2rem;
   letter-spacing: 0.1rem;
 }
+
 .nav-text {
   font-size: 2rem;
   letter-spacing: 0.1rem;
 }
+
 .btn-custom {
   background: white;
   border: 1px solid #FD9B98;
@@ -81,18 +105,22 @@ body {
   padding: 0.5rem 2rem;
   transition: all 0.3s ease;
 }
+
 .btn-custom:hover {
   background: #FD9B98;
   color: white;
 }
+
 .nav-links div {
   font-size: 1.5rem;
   cursor: pointer;
   transition: color 0.3s ease;
 }
+
 .nav-links div:hover {
   color: #FD9B98;
 }
+
 /* Minimal addition so the new button keeps the same look as the other .nav-links divs */
 .nav-links button {
   font-size: 1.5rem;
@@ -104,9 +132,11 @@ body {
   font-family: inherit;
   color: inherit;
 }
+
 .nav-links button:hover {
   color: #FD9B98;
 }
+
 /* small helper for images in the highlights box */
 .highlights-image {
   width: 90%;
@@ -115,20 +145,24 @@ body {
   border-radius: 8px;
   display:block;
 }
+
 /* Change scrollbar track background */
 .simplebar-track.simplebar-vertical {
   width: 10px; /* adjust thickness */
   border-radius: 5px;
 }
+
 /* Change scrollbar thumb (the draggable part) */
 .simplebar-scrollbar:before {
   background: #fd9b98; /* pink thumb */
   border-radius: 5px;
 }
+
 /* Optional: hover effect */
 .simplebar-scrollbar:hover:before {
   background: #fc7f7b; /* darker pink on hover */
 }
+
 /* Only move scrollbar for highlights view */
 .highlights-scroll .simplebar-track.simplebar-vertical {
   top: 12px;

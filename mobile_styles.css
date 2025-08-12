@@ -1,3 +1,7 @@
+html {
+    scroll-padding-top: 80px
+}
+
 body {
     font-family: 'Baloo Thambi 2', sans-serif;
     background-color: #fff;
@@ -64,3 +68,18 @@ body {
   z-index: 10000;
 }
 
+.btn-custom {
+  background: white;
+  border: 1px solid #FD9B98;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FD9B98;
+  font-family: 'Baloo Thambi 2', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: #FD9B98;
+  color: white;
+}
